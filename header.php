@@ -5,6 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
    <header class="header">
@@ -13,25 +14,26 @@
             <a href="" class="logo">
                <img src="" alt="logo">
             </a>
+            <!-- Меню -->
             <nav class="nav">
                <ul class="nav__menu">
                   <li class="nav__item">
                      <a href="#" class="nav__link">Главная</a>
                   </li>
                   <li class="nav__item">
-                     <a href="#" class="nav__link">Школы</a>
+                     <a href="#" class="nav__link">О нас</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#" class="nav__link">Наши школы</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#" class="nav__link">Преподаватель</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#" class="nav__link">Наши услуги</a>
                   </li>
                   <li class="nav__item">
                      <a href="#" class="nav__link">Новости</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Услуги</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Преподаватели</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Контакты</a>
                   </li>
                </ul>
             </nav>
