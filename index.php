@@ -1,14 +1,10 @@
 <?php include 'header.php'; ?>
    <main class="main">
       <!-- Стартовый экран -->
-      <section class="section">
+      <section class="section section_background" style="background-image: url()">
          <div class="container">
             <div class="section__heading">
                <h1 class="section__title">BigBen - Школа английского языка</h1>
-            </div>
-            <div class="section__content">
-               <!-- Баннер -->
-               <img src="#" alt="services" class="section__img">
             </div>
          </div>
       </section>
