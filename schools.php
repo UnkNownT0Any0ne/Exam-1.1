@@ -4,7 +4,7 @@
       <section class="section">
          <div class="container">
             <div class="section__heading">
-               <h2 class="section__title">Наши школы</h2>
+               <h1 class="section__title">Наши школы</h1>
             </div>
             <div class="section__content">
                <!-- Школы -->

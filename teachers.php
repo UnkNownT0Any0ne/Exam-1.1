@@ -4,7 +4,7 @@
       <section class="section">
          <div class="container">
             <div class="section__heading">
-               <h2 class="section__title">Наши преподаватели</h2>
+               <h1 class="section__title">Наши преподаватели</h1>
             </div>
             <div class="section__content">
                <!-- Преподаватели -->
