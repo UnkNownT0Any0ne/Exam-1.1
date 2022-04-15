@@ -10,23 +10,33 @@
                <!-- Преподаватели -->
                <div class="teachers">
                   <div class="teacher">
-                     <img src="#" alt="teacher" class="teacher__img">
-                     <p class="teacher__name">Светлана Николаевна Милютина</p>
+                     <img src="assets/images/teachers/teacher-1.jpg" alt="teacher" class="teacher__img">
+                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
                      <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
                   </div>
                   <div class="teacher">
-                     <img src="#" alt="teacher" class="teacher__img">
-                     <p class="teacher__name">Светлана Николаевна Милютина</p>
+                     <img src="assets/images/teachers/teacher-2.jpg" alt="teacher" class="teacher__img">
+                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
                      <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
                   </div>
                   <div class="teacher">
-                     <img src="#" alt="teacher" class="teacher__img">
-                     <p class="teacher__name">Светлана Николаевна Милютина</p>
+                     <img src="assets/images/teachers/teacher-3.jpg" alt="teacher" class="teacher__img">
+                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
                      <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
                   </div>
                   <div class="teacher">
-                     <img src="#" alt="teacher" class="teacher__img">
-                     <p class="teacher__name">Светлана Николаевна Милютина</p>
+                     <img src="assets/images/teachers/teacher-4.jpg" alt="teacher" class="teacher__img">
+                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
+                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
+                  </div>
+                  <div class="teacher">
+                     <img src="assets/images/teachers/teacher-5.jpg" alt="teacher" class="teacher__img">
+                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
+                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
+                  </div>
+                  <div class="teacher">
+                     <img src="assets/images/teachers/teacher-6.jpg" alt="teacher" class="teacher__img">
+                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
                      <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
                   </div>
                </div>

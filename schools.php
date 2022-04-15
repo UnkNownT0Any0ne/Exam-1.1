@@ -10,19 +10,29 @@
                <!-- Школы -->
                <div class="schools">
                   <div class="school">
-                     <img src="#" alt="school" class="school__img">
-                     <p class="school__name">08.01.2002</p>
-                     <p class="school__description">Мы сегодня смогли собрать компьютер на базе процессора байкал, с помощью чего запустили сразу же боеголовку!</p>
+                     <img src="assets/images/schools/school-1.jpg" alt="school" class="school__img">
+                     <strong class="school__name">Школа английского языка</strong>
+                     <p class="school__description">Школа находится там-то там-то, но вы не найдёте, но это не важно</p>
                   </div>
                   <div class="school">
-                     <img src="#" alt="school" class="school__img">
-                     <p class="school__name">08.01.2002</p>
-                     <p class="school__description">Мы сегодня смогли собрать компьютер на базе процессора байкал, с помощью чего запустили сразу же боеголовку!</p>
+                     <img src="assets/images/schools/school-2.jpg" alt="school" class="school__img">
+                     <strong class="school__name">Школа английского языка</strong>
+                     <p class="school__description">Школа находится там-то там-то, но вы не найдёте, но это не важно</p>
                   </div>
                   <div class="school">
-                     <img src="#" alt="school" class="school__img">
-                     <p class="school__name">08.01.2002</p>
-                     <p class="school__description">Мы сегодня смогли собрать компьютер на базе процессора байкал, с помощью чего запустили сразу же боеголовку!</p>
+                     <img src="assets/images/schools/school-3.jpg" alt="school" class="school__img">
+                     <strong class="school__name">Школа английского языка</strong>
+                     <p class="school__description">Школа находится там-то там-то, но вы не найдёте, но это не важно</p>
+                  </div>
+                  <div class="school">
+                     <img src="assets/images/schools/school-4.jpg" alt="school" class="school__img">
+                     <strong class="school__name">Школа английского языка</strong>
+                     <p class="school__description">Школа находится там-то там-то, но вы не найдёте, но это не важно</p>
+                  </div>
+                  <div class="school">
+                     <img src="assets/images/schools/school-5.jpg" alt="school" class="school__img">
+                     <strong class="school__name">Школа английского языка</strong>
+                     <p class="school__description">Школа находится там-то там-то, но вы не найдёте, но это не важно</p>
                   </div>
                </div>
             </div>

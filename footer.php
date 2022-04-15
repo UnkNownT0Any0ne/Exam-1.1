@@ -8,9 +8,9 @@
                   <p class="requisites__bik">БИК: 012748051</p>
                </div>
                <div class="social-links">
-                  <a href="#" class="social-links__item">instagram</a>
-                  <a href="#" class="social-links__item">vk</a>
-                  <a href="#" class="social-links__item">facebook</a>
+                  <a href="#" class="link social-links__item">instagram</a>
+                  <a href="#" class="link social-links__item">vk</a>
+                  <a href="#" class="link social-links__item">facebook</a>
                </div>
             </div>
          </div>
