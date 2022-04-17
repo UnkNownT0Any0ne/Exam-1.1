@@ -184,12 +184,58 @@ h2 {
    display: flex;
    gap: var(--gap);
 }
-.nav__link {
+.nav__menu a {
    color: var(--text-color);
    transition: color var(--text-color);
 }
-.nav__link:hover {
+.nav__menu a:hover {
    color: var(--accent-color-hover);
+}
+.nav_mobile {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid var(--border-color);
+}
+.nav_mobile .nav__menu {
+	flex-direction: column;
+	align-items: stretch;
+}
+.nav_mobile a {
+	display: block;
+	padding: 6px 12px;
+	background: var(--bg-color);
+	border: 1px solid var(--bg-color);
+	border-radius: var(--border);
+}
+.nav_mobile .current_page_item a {
+	background: var(--accent-color);
+	border: 1px solid var(--accent-color);
+	color: #fff;
+}
+/* hamburger */
+.header__footer {
+	display: none;
+}
+.hamburger {
+	width: 20px;
+	height: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.hamburger__line {
+	background: var(--text-color);
+	border-radius: var(--border);
+	display: block;
+	width: 100%;
+	height: 2px;
+	transition: transform var(--time);
+}
+.hamburger_active .hamburger__line:nth-child(1) {
+	transform: translateY(5px) rotate(45deg);
+}
+.hamburger_active .hamburger__line:nth-child(2) {
+	transform: translateY(-5px) rotate(-45deg);
 }
 /* link */
 .link {
@@ -240,6 +286,7 @@ h2 {
    grid-template-columns: repeat(3, 1fr);
 }
 .new {
+   color: inherit;
    display: grid;
    text-align: center;
    gap: var(--gap);
@@ -311,4 +358,36 @@ h2 {
 }
 .service__description {
    margin-bottom: 10px;
+}
+/* media */
+@media (max-width: 768px) {
+	.header .nav:not(.nav_mobile) {
+		display: none;
+	}
+	.header .logo {
+		display: none;
+	}
+   .services {
+      grid-template-columns: 1fr;
+   }
+   .news {
+      grid-template-columns: 1fr;
+   }
+   .teachers {
+      grid-template-columns: 1fr;
+   }
+   .schools {
+      grid-template-columns: 1fr;
+   }
+   .section__content {
+      grid-template-columns: 1fr;
+   }
+}
+@media (min-width: 769px) {
+	.hamburger {
+		display: none;
+	}
+	.header .header__footer {
+		display: none !important;
+	}
 }

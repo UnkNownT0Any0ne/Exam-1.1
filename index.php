@@ -1,7 +1,13 @@
-<?php include 'header.php'; ?>
+<?php 
+   $services = new WP_Query ([
+      'cat' => 7,
+      'posts_per_page' => -1
+   ]);
+   get_header(); 
+?>
    <main class="main">
       <!-- Стартовый экран -->
-      <section class="section section_background" style="background-image: url(assets/images/bg/bg.jpg)">
+      <section class="section section_background" style="background-image: url(<?php bloginfo('template_url'); ?>/assets/images/bg/bg.jpg)">
          <div class="container">
             <div class="section__heading">
                <h1 class="section__title">BigBen - Школа английского языка</h1>
@@ -15,7 +21,7 @@
                <h2 class="section__title">Наши преимущества</h2>
             </div>
             <div class="section__content section__content_fix">
-               <img src="assets/images/benefits.jpg" alt="benefits-img" class="section__img">
+               <img src="<?php bloginfo('template_url'); ?>/assets/images/benefits.jpg" alt="benefits-img" class="section__img">
                <!-- Преимущества -->
                <ul class="benefits">
                   <li class="benefits__text">Высококвалифицированные преподаватели</li>
@@ -34,13 +40,19 @@
             </div>
             <div class="section__content section__content_fix">
                <!-- Форма записи -->
-               <img src="assets/images/services/services.jpg" alt="form" class="section__img">
+               <img src="<?php bloginfo('template_url'); ?>/assets/images/services/services.jpg" alt="form" class="section__img">
                <div class="form">
-                  <input type="text" class="input text-muted" placeholder="Введите ваше ФИО">
-                  <input type="text" class="input text-muted" placeholder="Введите номер телефона">
-                  <input type="email" class="input text-muted" placeholder="Введите вашу почту">
-                  <input type="text" class="input text-muted" placeholder="Введите название услуги">
-                  <input type="date" class="input text-muted">
+                  <input type="text" class="input text-muted" placeholder="Введите ваше ФИО" require>
+                  <input type="text" class="input text-muted" placeholder="Введите номер телефона" require>
+                  <input type="email" class="input text-muted" placeholder="Введите вашу почту" require>
+                  <select name="services-option" class="input" require>
+                     <?php if ($services->have_posts()): ?>
+                        <?php while($services->have_posts()): $services->the_post(); ?>
+                           <option value="<?php the_title(); ?>"><?php the_title(); ?></option>
+                        <?php endwhile; ?>
+                     <?php endif; ?>
+                  </select>
+                  <input type="date" class="input text-muted" require>
                   <a href="#" class="btn">Отправить</a>
                </div>
             </div>
@@ -55,36 +67,35 @@
             <div class="section__content">
                <!-- Преподаватели -->
                <div class="teachers">
-                  <div class="teacher">
-                     <img src="assets/images/teachers/teacher-1.jpg" alt="teacher" class="teacher__img">
-                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
-                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
-                  </div>
-                  <div class="teacher">
-                     <img src="assets/images/teachers/teacher-2.jpg" alt="teacher" class="teacher__img">
-                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
-                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
-                  </div>
-                  <div class="teacher">
-                     <img src="assets/images/teachers/teacher-3.jpg" alt="teacher" class="teacher__img">
-                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
-                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
-                  </div>
-                  <div class="teacher">
-                     <img src="assets/images/teachers/teacher-4.jpg" alt="teacher" class="teacher__img">
-                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
-                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
-                  </div>
-                  <div class="teacher">
-                     <img src="assets/images/teachers/teacher-5.jpg" alt="teacher" class="teacher__img">
-                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
-                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
-                  </div>
-                  <div class="teacher">
-                     <img src="assets/images/teachers/teacher-6.jpg" alt="teacher" class="teacher__img">
-                     <strong class="teacher__name">Светлана Николаевна Милютина</strong>
-                     <p class="teacher__description">Преподаватель веб-разработки и программирования</p>
-                  </div>
+                  <?php
+                     global $post;
+
+                     $myposts = get_posts([
+                        'category_name' => 'Преподаватель'
+                     ]);
+
+                     if( $myposts ){
+                        foreach( $myposts as $post ){
+                           setup_postdata( $post );
+                           ?>
+                           <div class="teacher">
+                              <?php the_post_thumbnail(
+                                 array(380, 250),
+                                 array(
+                                    'class' => 'teacher__img'
+                                 )
+                              );?>
+                              <strong class="teacher__name"><?php the_title(); ?></strong>
+                              <p class="teacher__description"><?php the_content(); ?></p>
+                           </div>
+                           <?php 
+                        }
+                     } else {
+                        // Постов не найдено
+                     }
+
+                     wp_reset_postdata(); // Сбрасываем $post
+                  ?>
                </div>
             </div>
          </div>
@@ -98,24 +109,40 @@
             <div class="section__content">
                <!-- Новости -->
                <div class="news">
-                  <div class="new">
-                     <img src="assets/images/news/new-1.jpg" alt="news" class="new__img">
-                     <p class="new__text">Мы сегодня смогли собрать компьютер на базе процессора байкал, с помощью чего запустили сразу же боеголовку!</p>
-                     <strong class="new__date">08.01.2002</strong>
-                  </div>
-                  <div class="new">
-                     <img src="assets/images/news/new-2.jpg" alt="news" class="new__img">
-                     <p class="new__text">Мы сегодня смогли собрать компьютер на базе процессора байкал, с помощью чего запустили сразу же боеголовку!</p>
-                     <strong class="new__date">08.01.2002</strong>
-                  </div>
-                  <div class="new">
-                     <img src="assets/images/news/new-3.jpg" alt="news" class="new__img">
-                     <p class="new__text">Мы сегодня смогли собрать компьютер на базе процессора байкал, с помощью чего запустили сразу же боеголовку!</p>
-                     <strong class="new__date">08.01.2002</strong>
-                  </div>
+                  <!-- Новость -->
+                  <?php
+                     global $post;
+
+                     $myposts = get_posts([
+                        'numberposts' => 3,
+                        'category_name' => 'Новость'
+                     ]);
+
+                     if( $myposts ){
+                        foreach( $myposts as $post ){
+                           setup_postdata( $post );
+                           ?>
+                           <a href="<?php the_permalink(); ?>" class="new">
+                              <?php the_post_thumbnail(
+                                 array(400, 270),
+                                 array(
+                                    'class' => 'new__img'
+                                 )
+                              );?>
+                              <p class="new__text"><?php the_title(); ?></p>
+                              <strong class="new__date">Создано: <?php the_time('j F Y'); ?></strong>
+                           </a>
+                           <?php 
+                        }
+                     } else {
+                        // Постов не найдено
+                     }
+
+                     wp_reset_postdata(); // Сбрасываем $post
+                  ?>
                </div>
             </div>
          </div>
       </section>
    </main>
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

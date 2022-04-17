@@ -8,9 +8,7 @@
                   <p class="requisites__bik">БИК: 012748051</p>
                </div>
                <div class="social-links">
-                  <a href="#" class="link social-links__item">instagram</a>
-                  <a href="#" class="link social-links__item">vk</a>
-                  <a href="#" class="link social-links__item">facebook</a>
+                  <?php dynamic_sidebar('main_sidebar'); ?>
                </div>
             </div>
          </div>
@@ -19,6 +17,6 @@
          </div>
       </div>
    </footer>
-   
+   <?php wp_footer(); ?>
 </body>
 </html>
