@@ -1,7 +1,7 @@
 ## :hammer_and_wrench: Что нужно сделать?
 * Доделать мелочи (форму)
 * Вроде как все...
-* Сам сайт: http://bigbenexam.42web.io/
+* Сам сайт: http://bigbemexam.epizy.com/
 
 ## :question: Задание
 * Карта сайта:
